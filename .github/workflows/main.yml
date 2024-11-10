@@ -1,0 +1,16 @@
+name:
+  on:
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+      name: checkout
+      uses: actions/checkout@v4
+      name: insteall dependencies
+      uses: actions/step-python@v2
+      with:
+        python-version: '3.5'
+      name: install libraries
+      run: pip install -r requirements.txt
+      name: run test I
+        run: pytest test.py
